@@ -1,0 +1,44 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Umbraco</title>
+
+	<link rel="stylesheet" href="/Content/bootstrap.min.css">
+	<link rel="stylesheet" href="/Content/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+
+	<div id="headercontainer">
+		<header class="wrapper clearfix">
+			<nav>
+				@Umbraco.RenderMacro("mainMenu")
+			</nav>
+		</header>
+	</div>
+			
+	<main class="container">
+		@RenderBody()
+	</main>
+			
+	<footer id="footer">
+		<div class="container text-center">
+			<p class="text-muted credit">@Umbraco.Field("footerText", recursive: true)</p>
+		</div>
+	</footer>
+			
+<script src="/scripts/jquery-3.1.0.min.js"></script>
+<script src="/scripts/bootstrap.min.js"></script>
+<script src="~/scripts/jquery.validate.min.js"></script>
+<script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

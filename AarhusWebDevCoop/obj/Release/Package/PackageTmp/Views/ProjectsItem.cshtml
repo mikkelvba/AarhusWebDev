@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ProjectsItem>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Master.cshtml";
+	var image = Umbraco.Media(CurrentPage.image);
+}
+
+@Umbraco.Field("projectTitle")
+@if(image != null){
+	<img src="@image.Url" alt="@image.UrlName" />
+}
+@Umbraco.Field("projectContent")
