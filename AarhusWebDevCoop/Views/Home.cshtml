@@ -3,10 +3,17 @@
 @{
 	Layout = "Master.cshtml";
 }
-<div class="container home-intro text-center">
-	<h1>@Umbraco.Field("siteTitle")</h1>
-	<h2>@Umbraco.Field("mainContent")</h2>
+<div class="frontpage-intro intro">
+	<div class="row">
+		<div class="col-lg-12 col-md-12">
+			<div class="site-heading">
+				<h1>@Umbraco.Field("siteTitle")</h1>
+				<h2>@Umbraco.Field("mainContent")</h2>
+			</div>
+		</div>
+	</div>
 </div>
+				
 <div class="container home-projects">
     <div id="main" class="wrapper clearfix">
         <section>

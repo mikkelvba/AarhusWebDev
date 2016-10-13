@@ -6,17 +6,18 @@
 
 @foreach (var item in selection)
 {
-<div class="panel panel-default">
-    <div class="panel-heading ">
-        <p>@item.msgbName <span class="">@item.msgbCreateDate</span></p>
-
-        @using (Html.BeginForm("DeleteMessage", "MessageBoardSurFace", new {contentId = @item.Id, redirectId = CurrentPage.Id}, FormMethod.Post, new {@class = "form-inline"}))
-        {
-        	<button id="contact-submit" type="submit" class="btn btn-danger ">Remove</button>
-        }
-    </div>
-    <div class="panel-body">
-        @item.msgbMessage
+<div class="col-md-4 col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel-heading ">
+            <h4>@item.msgbName</h4>
+            @using (Html.BeginForm("DeleteMessage", "MessageBoardSurFace", new { contentId = @item.Id, redirectId = CurrentPage.Id }, FormMethod.Post, new { @class = "form-inline" }))
+            {
+                <button id="" type="submit" class="btn btn-xs btn-danger">Remove</button>
+            }
+        </div>
+        <div class="panel-body">
+            @item.msgbMessage
+        </div>
     </div>
 </div>
 }

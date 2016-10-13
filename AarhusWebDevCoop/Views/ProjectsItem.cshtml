@@ -5,8 +5,16 @@
 	var image = Umbraco.Media(CurrentPage.image);
 }
 
-@Umbraco.Field("projectTitle")
-@if(image != null){
-	<img src="@image.Url" alt="@image.UrlName" />
-}
-@Umbraco.Field("projectContent")
+<div class="project-main">
+	<div class="message-board">
+		<h1>@Umbraco.Field("projectTitle")</h1>
+	</div>
+	@if(image != null){
+		<div class="project-img">
+			<img src="@image.Url" alt="@image.UrlName" />
+		</div>
+	}
+	<div class="project-content">
+		@Umbraco.Field("projectContent")
+	</div>
+</div>

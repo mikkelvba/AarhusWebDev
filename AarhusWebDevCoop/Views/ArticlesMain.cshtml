@@ -7,8 +7,11 @@
 <div id="main-container">
     <div id="main" class="wrapper clearfix">
         <section>
-            <h2>@Umbraco.Field("articlesTitle")</h2>
-            @Umbraco.Field("articlesBodyText")
-        </section>  
+		<div class="message-board">
+            <h1>@Umbraco.Field("articlesTitle")</h1>
+		</div>
+        @Umbraco.Field("articlesBodyText")
+        </section>
+		@Umbraco.RenderMacro("listArticles")
     </div> <!-- #main -->
 </div> <!-- #main-container -->

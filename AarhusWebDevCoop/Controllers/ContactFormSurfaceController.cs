@@ -32,7 +32,7 @@ namespace AarhusWebDevCoop.Controllers
             message.To.Add("mikkelvba@gmail.com");
             message.Subject = model.Subject;
             message.From = new MailAddress(model.Email, model.Name);
-            message.Body = model.Message + "\n my email is: " + model.Email;
+            message.Body = model.Message + "\n Email: " + model.Email;
 
             using (SmtpClient smtp = new SmtpClient())
             {
@@ -44,26 +44,20 @@ namespace AarhusWebDevCoop.Controllers
                 smtp.Credentials = new NetworkCredential("mikkelvba@gmail.com", "rtuurozchslaijbm");
 
                 smtp.Send(message);
-
-
             }
             TempData["success"] = true;
 
-            //Redirects to the same page without the data
-
             IContent comment = Services.ContentService.CreateContent(model.Subject, CurrentPage.Id, "Comment");
 
-            comment.SetValue("name", model.Name);
+            comment.SetValue("commentName", model.Name);
             comment.SetValue("email", model.Email);
             comment.SetValue("subject", model.Subject);
-            comment.SetValue("message", model.Subject);
+            comment.SetValue("message", model.Message);
 
             Services.ContentService.Save(comment);
-
-
+        
+            //Redirects to the same page without the data
             return RedirectToCurrentUmbracoPage();
-
         }
     }
-
 }

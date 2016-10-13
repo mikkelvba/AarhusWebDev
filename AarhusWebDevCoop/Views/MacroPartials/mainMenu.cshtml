@@ -1,83 +1,66 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
-
+@using System.Web.Mvc.Html
+@using ClientDependency.Core.Mvc
+@using Umbraco.Web
+@using Umbraco.Web.Models
+@using Umbraco.Web.Controllers
 @{
-	var selection = CurrentPage.Site().Children.Where("Visible && DocumentTypeAlias != \"projectsMain\"");
-	var projects = CurrentPage.Site().Children.Where("DocumentTypeAlias == \"projectsMain\"").First().Children.OrderBy("UpdateDate descending").Take(2);
+    var selection = CurrentPage.Site().Children.Where("Visible && DocumentTypeAlias != \"projectsMain\"");
+    var projects = CurrentPage.Site().Children.Where("DocumentTypeAlias == \"projectsMain\"").First().Children.OrderBy("UpdateDate descending").Take(2);
+	var loginStatusModel = Members.GetCurrentLoginStatus();
 }
-
-<nav class="navbar navbar-default navbar-static-top">
-  <div class="container">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="/">Aarhus Web Dev</a>
-		</div>
-		<ul class="nav navbar-nav">
-			@foreach(var item in selection){
-				<li>
-					<a href="@item.Url">@item.Name</a>
-				</li>
-			}
-			<li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
-				<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					@foreach(var item in projects){
-						if(@item.Status=="Completed") {
-							<li>
-								<a href="@item.Url">@item.Name</a>
-								</li>
-						}
+<nav>
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Aarhus Web Dev</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    @foreach (var item in selection)
+                    {
+                        <li>
+                            <a href="@item.Url">@item.Name</a>
+                        </li>
+                    }
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Projects
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/projects">Projects</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            @foreach (var item in projects)
+                            {
+                                if (@item.Status == "Completed")
+                                {
+                                    <li>
+                                        <a href="@item.Url">@item.Name</a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                </ul>
+				<ul class="nav navbar-nav navbar-right">
+					@if (!Members.GetCurrentLoginStatus().IsLoggedIn) {
+						<li><a href="/login">Login</a></li>
 					}
-				</ul>
-			</li>
-		</ul>
-	</div>
-</nav>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Aarhus Web Dev</a>
-        </div>
-        <div class="collapse navbar-collapse">
-        	<ul class="nav navbar-nav">
-			@foreach(var item in selection){
-				<li>
-					<a href="@item.Url">@item.Name</a>
-				</li>
-			}
-			<li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
-				<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					@foreach(var item in projects){
-						if(@item.Status=="Completed") {
-							<li>
-								<a href="@item.Url">@item.Name</a>
-								</li>
-						}
+					else 
+					{
+						<li><a href="/login">Logout</a></li>
 					}
-				</ul>
-			</li>
-			</ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+				</ul>	
+            </div>
         </div>
     </div>
-</div>
+</nav>

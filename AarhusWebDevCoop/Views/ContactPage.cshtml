@@ -3,7 +3,15 @@
 @{
 	Layout = "Master.cshtml";
 }
-<h2>@CurrentPage.Name</h2>
-    <div>
-        @Html.Action("Index", "ContactFormSurface")
-    </div>
+<div class="intro">
+	<div class="row">
+		<div class="col-lg-12 col-md-12">
+			<div class="site-heading contact-form">
+				<h1>@CurrentPage.Name</h1>
+				<div>
+					@Html.Action("Index", "ContactFormSurface")
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

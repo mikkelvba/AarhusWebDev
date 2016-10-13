@@ -27,15 +27,8 @@ namespace AarhusWebDevCoop.Controllers
             }
             IContent msg = Services.ContentService.CreateContent(messageBoard.Name, CurrentPage.Id, "messageBoard");
 
-            var dateTime = DateTime.Now;
-            String strDate = "";
-            strDate = dateTime.ToString("dddd, dd MMMM yyyy HH:mm");
-
             msg.SetValue("msgbName", messageBoard.Name);
             msg.SetValue("msgbMessage", messageBoard.Message);
-            msg.SetValue("msgbCreateDate", strDate);
-
-
             try
             {
                 //Saves but doesnt publish IContent
@@ -46,13 +39,10 @@ namespace AarhusWebDevCoop.Controllers
             }
             catch (Exception e)
             {
-                TempData["TempMsgBoard"] = "<div class='alert alert-danger'><p>Message was NOT created</p>" +
-                                                        "<p>Something went wrong. Try again later or contact your administrator.</p></div>";
+                TempData["TempMsgBoard"] = "<div class='alert alert-danger'><p>Message was not created</p>" + "<p>Something went wrong. Try again later or contact your administrator.</p></div>";
                 ModelState.AddModelError(string.Empty, "" + e.InnerException.ToString());
             }
-            TempData["TempMsgBoard"] = "<div class='alert alert-success'><p>Message created</p>" +
-                                                        "<p>You have succesfully created a message.</p></div>";
-
+            TempData["TempMsgBoard"] = "<div class='alert alert-success'><p>Message was created</p>" + "<p>You have succesfully created a message.</p></div>";
             return RedirectToCurrentUmbracoPage();
         }
 
@@ -69,14 +59,11 @@ namespace AarhusWebDevCoop.Controllers
                 }
                 catch (Exception e)
                 {
-                    TempData["TempMsgBoard"] = "<div class='alert alert-danger'><p>Message was NOT created</p>" +
-                                                        "<p>Something went wrong. Try again later or contact your administrator.</p></div>";
+                    TempData["TempMsgBoard"] = "<div class='alert alert-danger'><p>Message was not deleted</p>" + "<p>Something went wrong. Try again later or contact your administrator.</p></div>";
                     ModelState.AddModelError(string.Empty, "" + e.InnerException.ToString());
                 }
-
             }
-            TempData["TempMsgBoard"] = "<div class='alert alert-success'><p>Message deleted</p>" +
-                                                        "<p>You have succesfully deleted a message.</p></div>";
+            TempData["TempMsgBoard"] = "<div class='alert alert-success'><p>Message was deleted</p>" + "<p>You have succesfully deleted a message.</p></div>";
             return RedirectToUmbracoPage(redirectId);
             //return RedirectToCurrentUmbracoPage();
         }

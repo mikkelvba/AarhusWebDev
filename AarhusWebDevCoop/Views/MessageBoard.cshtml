@@ -3,11 +3,13 @@
 @{
 	Layout = "Master.cshtml";
 }
+<div class="message-board">
+	<h1>Message board</h1>
 
-@Html.Raw(TempData["TempMsgBoard"])
-<section>
-<h2>Welcome to our message board</h2>
-@Umbraco.RenderMacro("listMessages")
-</section>
-	
-@Html.Action("CreateMessage", "MessageBoardSurface")
+	@Html.Action("CreateMessage", "MessageBoardSurface")
+
+	@Html.Raw(TempData["TempMsgBoard"])
+	<section>
+		@Umbraco.RenderMacro("listMessages")
+	</section>
+</div>

@@ -1,3 +1,335 @@
-p.text-muted.credit {
-	color: #ffffff;
+/*GENERAL*/
+body {
+    font-family: "Poppins";
+}
+
+hr.small {
+    max-width: 100px;
+    margin: 15px auto;
+    border-width: 4px;
+    border-color: #54687c;
+}
+
+.title {
+    text-align: center;
+    font-size: 36px;
+    margin: 40px 0px 0px 0px;
+    color: #54687c;
+}
+
+/*FRONTPAGE*/
+.frontpage-intro {
+    border-bottom: solid 1px #ddd;
+}
+
+.intro {
+    text-align: center;
+    padding: 120px 0px 180px 0px;
+}
+
+    .intro h1 {
+        font-size: 60px;
+        color: #54687c;
+    }
+
+    .intro p {
+        font-size: 24px;
+        line-height: 1.1;
+        display: block;
+        font-weight: 300;
+        margin: 10px 0 0;
+        color: #9298a8;
+    }
+
+.page-content .col-md-6 {
+    margin-top: 25px;
+}
+
+    .page-content .col-md-6 .fp-images {
+        height: 200px;
+        overflow: hidden;
+    }
+
+/*MENU*/
+.navbar-static-top {
+    background: #304e63;
+    border-bottom: 1px solid #304e63;
+    box-shadow: 0 4px 5px -3px #aaa;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    color: #eeeeee;
+}
+
+/*FOOTER*/
+footer#footer {
+    margin-top: 50px;
+    padding: 20px 0px 10px 0px;
+    background: #304f63;
+}
+
+    footer#footer p {
+        color: #eeeeee;
+    }
+
+/*LOGIN PAGE*/
+.login-form {
+    max-width: 350px;
+    margin: 0px auto;
+    padding: 15px 30px 40px 30px;
+    box-sizing: border-box;
+    border: solid #54687c 1px;
+    border-radius: 10px;
+    background: #54687c;
+}
+
+    .login-form h1 {
+        color: #fefefe;
+    }
+
+input#loginModel_Username, input#loginModel_Password {
+    float: right;
+    margin-top: 6px;
+}
+
+.login-form label {
+    float: left;
+    position: relative;
+    top: 4px;
+    color: #eeeeee;
+    margin-top: 6px;
+}
+
+.login-form button {
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+    background: #304f63;
+    border-color: #fefefe;
+    box-shadow: none;
+    text-shadow: none;
+    color: #fefefe;
+}
+
+.login-form p {
+    color: #ffffff;
+}
+
+.login-form legend {
+    color: #9298a8;
+    font-weight: 700;
+    border: none;
+    position: relative;
+    top: 10px;
+}
+
+.login-form button:hover {
+    background: #ffffff;
+}
+/*ARTICLES MAIN*/
+.list-group {
+    box-shadow: none;
+    margin-bottom: 15px;
+}
+
+    .list-group a {
+        border: none;
+        border-radius: 0px !important;
+        border-top: solid 1px #ddd;
+    }
+
+        .list-group a:hover {
+            background: none;
+            opacity: .8;
+        }
+
+h4.list-group-item-heading {
+    font-size: 36px;
+    font-weight: 900;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #304f63 !important;
+}
+
+.list-group p {
+    font-size: 18px;
+    font-weight: 100;
+    margin: 0;
+    color: #54687c;
+}
+
+
+/*ARTICLES SINGLE*/
+.article-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/*CONTACT PAGE*/
+.contact-form {
+    max-width: 600px;
+    margin: 0px auto;
+    border: solid 1px #304f63;
+    border-radius: 10px;
+    padding: 0px 10px 20px 10px;
+}
+
+    .contact-form form div {
+        width: 100% !important;
+        margin: 4px 0px !important;
+    }
+
+    .contact-form form label {
+        display: none;
+    }
+
+.form-control {
+    border-color: #54687c;
+}
+
+button#contact-submit {
+    margin-top: 10px;
+    width: 100%;
+    background: #304f63;
+    box-shadow: none;
+}
+
+/*MEMBERS PAGE*/
+.full-list-members {
+    text-align: center;
+}
+
+.list-members {
+    display: inline-block;
+    max-width: 600px;
+    padding: 17px 0px;
+    border: solid 1px #ccc;
+}
+
+    .list-members p {
+        font-size: 20px;
+        font-weight: 100;
+        margin: 0;
+        text-align: left;
+        color: #54687c;
+    }
+
+/*MESSAGE BOARD PAGE*/
+.message-board form.form-horizontal {
+    max-width: 500px;
+    margin: 0px auto;
+}
+
+.message-board form input.btn.btn-default {
+    background: #54687c;
+    box-shadow: none;
+    text-shadow: none;
+    color: #fefefe;
+}
+
+.message-board .btn-danger {
+    background: #f38077;
+    border-color: #f38077;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+    .message-board .btn-danger:hover {
+        color: #fff;
+        background-color: #ee5d57;
+        border-color: #ee5d57;
+    }
+
+.message-board .panel-heading {
+    background-image: none;
+    background: #9298a8;
+    color: #fefefe;
+    position: relative;
+}
+
+.message-board .panel-default {
+    border-color: #9298a8;
+}
+
+.message-board form.form-inline {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+}
+
+.message-board h1 {
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 60px;
+    color: #54687c;
+}
+
+.message-board section:first-of-type {
+    margin-top: 50px;
+}
+
+/*TEXTPAGE*/
+#textpage .grid-section > div:nth-of-type(1) {
+    padding-top: 80px;
+}
+
+#textpage .grid-section > div:nth-of-type(2) {
+    padding-bottom: 80px;
+}
+
+#textpage .col-md-12.column {
+    text-align: center;
+}
+
+    #textpage .col-md-12.column h1 {
+        font-size: 60px;
+        color: #54687c;
+    }
+
+#textpage .grid-section > div:nth-of-type(2) p {
+    font-size: 24px;
+    line-height: 1.1;
+    display: block;
+    font-weight: 300;
+    margin: 10px 0 0;
+    color: #9298a8;
+}
+
+/*PROJECTS*/
+.project-main-content p {
+    position: relative;
+    top: -30px;
+}
+
+p.status {
+    color: #b74949;
+}
+
+.message-board p {
+    font-size: 24px;
+    line-height: 1.1;
+    display: block;
+    font-weight: 300;
+    margin: 10px 0 0;
+    color: #9298a8;
+    text-align: center;
+}
+
+.project-img {
+    text-align: center;
+}
+
+    .project-img img {
+        max-height: 300px;
+        padding-bottom: 40px;
+    }
+
+.project-main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/*ATTACH FOOTER TO BOTTOM*/
+main {
+    min-height: 80vh;
 }

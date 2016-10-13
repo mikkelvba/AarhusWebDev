@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6ac4250cc0d8c4bd")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "3ba8d78bcbfca50f")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -81,6 +81,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string MetaKeywords
 		{
 			get { return this.GetPropertyValue<string>("metaKeywords"); }
+		}
+
+		///<summary>
+		/// HideFromNav
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
 		}
 	}
 
@@ -187,15 +196,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString MainContent
 		{
 			get { return this.GetPropertyValue<IHtmlString>("mainContent"); }
-		}
-
-		///<summary>
-		/// HideFromNav
-		///</summary>
-		[ImplementPropertyType("umbracoNaviHide")]
-		public bool UmbracoNaviHide
-		{
-			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
 		}
 	}
 
@@ -539,15 +539,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<MessageBoard, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// strDate
-		///</summary>
-		[ImplementPropertyType("msgbCreateDate")]
-		public DateTime MsgbCreateDate
-		{
-			get { return this.GetPropertyValue<DateTime>("msgbCreateDate"); }
 		}
 
 		///<summary>

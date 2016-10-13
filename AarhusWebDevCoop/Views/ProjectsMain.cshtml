@@ -4,5 +4,14 @@
 	Layout = "Master.cshtml";
 }
 
-@Umbraco.Field("projectsTitle")
-@Umbraco.Field("projectsBodyText")
+<div id="main-container">
+    <div id="main" class="wrapper clearfix">
+        <section>
+		<div class="message-board project-main-content">
+            <h1>@Umbraco.Field("projectsTitle")</h1>
+        	@Umbraco.Field("projectsBodyText")
+		</div>
+        </section>
+		@Umbraco.RenderMacro("listProjects")
+    </div> <!-- #main -->
+</div> <!-- #main-container -->

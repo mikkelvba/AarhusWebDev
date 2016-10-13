@@ -441,6 +441,9 @@
     <Content Include="Views\Partials\Login.cshtml" />
     <Content Include="Views\Login.cshtml" />
     <Content Include="Views\MessageBoardSurface\MessageForm.cshtml" />
+    <Content Include="Views\MacroPartials\listMessages.cshtml" />
+    <Content Include="Views\MacroPartials\memberService.cshtml" />
+    <Content Include="Views\MacroPartials\twoNewestCompletedProjects.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

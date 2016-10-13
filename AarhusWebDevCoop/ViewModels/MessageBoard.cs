@@ -14,7 +14,5 @@ namespace AarhusWebDevCoop.ViewModels
         [Required(ErrorMessage = "A message is required")]
         [DataType(DataType.MultilineText)]
         public string Message { get; set; }
-
-        public DateTime CreateDate { get; set; }
     }
 }

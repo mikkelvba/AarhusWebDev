@@ -128,3 +128,4 @@ c:\users\steffen pedersen\documents\visual studio 2015\Projects\AarhusWebDevCoop
 c:\users\steffen pedersen\documents\visual studio 2015\Projects\AarhusWebDevCoop\AarhusWebDevCoop\bin\System.Web.Mvc.xml
 c:\users\steffen pedersen\documents\visual studio 2015\Projects\AarhusWebDevCoop\AarhusWebDevCoop\obj\Debug\AarhusWebDevCoop.dll
 c:\users\steffen pedersen\documents\visual studio 2015\Projects\AarhusWebDevCoop\AarhusWebDevCoop\obj\Debug\AarhusWebDevCoop.pdb
+C:\Users\Steffen Pedersen\documents\visual studio 2015\Projects\AarhusWebDevCoop\AarhusWebDevCoop\obj\Debug\AarhusWebDevCoop.csprojResolveAssemblyReference.cache
