@@ -3017,3 +3017,4 @@ _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needF
  2016-10-13 15:40:27,435 [P332/D10/T40] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.HealthCheck.HealthCheck, found 0 (took 12ms)
  2016-10-13 15:40:57,278 [P332/D10/T58] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
  2016-10-13 15:40:57,278 [P332/D10/T58] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 0ms)
+ 2016-10-13 15:59:22,035 [P332/D10/T69] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: steffen.pedersen@live.dk, IP Address: ::1

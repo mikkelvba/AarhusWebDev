@@ -1,6 +1,5 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
-	
 @{
 	var memberService = ApplicationContext.Current.Services.MemberService;
 	var members = memberService.GetMembersByGroup("Active");
